@@ -17,8 +17,8 @@ jobs:
         run: |
          pip3 install poetry
          poetry --version
-      - name: set up poetry
+      - name: find poetry path
         run: |
-         source $HOME/.poetry/env
-         poetry config virtualenvs.in-project true
+         echo "$HOME/.poetry/bin"
+         
 
