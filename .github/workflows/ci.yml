@@ -19,6 +19,7 @@ jobs:
          poetry --version
       - name: find poetry path
         run: |
+         ls -a $HOME
          echo "$HOME/.poetry/bin"
          
 
