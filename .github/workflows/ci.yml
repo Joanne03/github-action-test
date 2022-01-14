@@ -5,4 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo "auto test"
+      - run: |
+         pwd
+         ls
+         poetry run poe test
+        working-directory: /app
+
