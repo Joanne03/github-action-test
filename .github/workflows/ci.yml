@@ -15,6 +15,6 @@ jobs:
          ls
       - name: install poetry and check version
         run: |
-         python get-poetry.py --preview -y
+         pip3 install poetry
          poetry --version
 
