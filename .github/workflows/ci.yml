@@ -5,17 +5,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - name: Set up python 3.9
+        uses: actions/setup-python@v2
         with:
           python-version: "3.9"
-      - run: |
+      - name: check directory
+        run: |
          pwd
          ls
-         pip3 install poetry
+      - name: install poetry and check version
+        run:
+         python get-poetry.py --preview -y
          poetry --version
-         source $HOME/.poetry/env
-         poetry config virtualenvs.in-project true
-         poetry install
-         poetry run poe test
-        working-directory: app/
 
