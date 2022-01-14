@@ -8,6 +8,4 @@ jobs:
       - run: |
          pwd
          ls
-         poetry run poe test
-        working-directory: /app
 
