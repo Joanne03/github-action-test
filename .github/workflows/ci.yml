@@ -4,18 +4,18 @@ jobs:
   auto-test:
     runs-on: ubuntu-latest
     steps:
-      - name: check up repo
+      - name: check out repo
         uses: actions/checkout@v2
       - name: Set up python 3.9
         uses: actions/setup-python@v2
         with:
           python-version: "3.9"
-      - name: install and setup poetry 
+      - name: install poetry 
         run: |
          pip3 install poetry
-         poetry install
-      - name: run poe test
+      - name: install dependencies and test
         run: |
+         poetry install
          poetry run poe test
         working-directory: app/
          
