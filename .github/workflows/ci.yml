@@ -10,12 +10,13 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: "3.9"
-      - name: install poetry 
+      - name: install and setup poetry 
         run: |
          pip3 install poetry
-      - name: install dependencies and test
-        run: |
          poetry install
+        working-directory: app/
+      - name: run test
+        run: |
          poetry run poe test
         working-directory: app/
          
