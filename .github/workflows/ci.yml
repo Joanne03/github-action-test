@@ -20,6 +20,7 @@ jobs:
       - name: find poetry path
         run: |
          poetry install 
+         poetry run poe test
         working-directory: app/
          
 
